@@ -1,30 +1,28 @@
 // 10. Підрахувати число латинських букв на сторінці тексту, введеному як масив стрічок.
 
-#include<iostream>
-#include<cstring>
-using namespace std;
-const int s_len = 100;
-int main()
-{
-    char* arr_ptr;
-    char c;
-    int alp = 0;
-    char arr[s_len + 1];
-    
+#include <iostream>
+#include <cstring>
 
-    cout << " Count the letters in string:\n";
-    cout << endl;
-    cout << " Enter a string: ";
+using namespace std;
+
+const int s_len = 100;
+
+int main() {
+    const char* arr_ptr;
+    char arr[s_len + 1];
+    int alp = 0;
+
+    cout << "Count the letters in string:" << endl;
+    cout << "Enter a string: ";
     cin.getline(arr, s_len + 1);
-    cout << endl;
-    for (arr_ptr = arr; *arr_ptr != '\0'; arr_ptr++)
-    {
-        c = *arr_ptr;
-        if (isalpha(c))
-        {
+
+    for (arr_ptr = arr; *arr_ptr != '\0'; arr_ptr++) {
+        if (isalpha(*arr_ptr)) {
             alp++;
         }
     }
-        cout << "Number of letters in string \"" << arr << "\" is = " << alp;
-	return 0;
+	
+    cout << "Number of letters in string \"" << arr << "\" is = " << alp << endl;
+
+    return 0;
 }
